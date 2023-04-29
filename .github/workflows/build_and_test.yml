@@ -5,10 +5,11 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
         compiler: [ clang, gcc ]
         type: [ Debug, Release ]
         exclude:
