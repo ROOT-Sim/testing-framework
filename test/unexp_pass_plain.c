@@ -1,16 +1,17 @@
 /**
- * @file test/framework/self-tests/unexp_pass_plain.c
+ * @file test/unexp_pass_plain.c
  *
  * @brief Test: Test core functions of the testing framework
  *
- * This is the test that checks if assert can fail a test.
+ * This is the src that checks if assert can fail a src.
  *
- * SPDX-FileCopyrightText: 2008-2022 HPDCS Group <rootsim@googlegroups.com>
+ * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
 #include <test.h>
-#include <framework/self-tests/stubs.h>
 #include <stdlib.h>
+
+#include "stubs.h"
 
 int main(void)
 {

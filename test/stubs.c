@@ -1,9 +1,9 @@
 /**
- * @file test/framework/self-tests/stubs.c
+ * @file test/stubs.c
  *
  * @brief Test: Test core functions of the testing framework
  *
- * SPDX-FileCopyrightText: 2008-2022 HPDCS Group <rootsim@googlegroups.com>
+ * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
 #include <test.h>

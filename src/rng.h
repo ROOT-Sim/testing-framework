@@ -1,11 +1,11 @@
 /**
- * @file test/framework/rng.c
+ * @file src/rng.h
  *
  * @brief Pseudo random number generator for tests
  *
  * An acceptable-quality pseudo random number generator to be used in tests
  *
- * SPDX-FileCopyrightText: 2008-2022 HPDCS Group <rootsim@googlegroups.com>
+ * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
 #include <stdint.h>

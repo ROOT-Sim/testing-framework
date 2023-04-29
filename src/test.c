@@ -1,15 +1,15 @@
 /**
- * @file test/framework/test.c
+ * @file src/test.c
  *
  * @brief Custom minimalistic testing framework
  *
- * SPDX-FileCopyrightText: 2008-2022 HPDCS Group <rootsim@googlegroups.com>
+ * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
-#include <test.h>
+#include "test.h"
 
-#include <framework/thread.h>
-#include <framework/rng.h>
+#include "thread.h"
+#include "rng.h"
 
 #include <setjmp.h>
 #include <stdatomic.h>

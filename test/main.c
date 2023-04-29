@@ -1,17 +1,17 @@
 /**
- * @file test/framework/self-tests/main.c
+ * @file test/main.c
  *
  * @brief Test: Main program of the self-tests tests for the testing framework
  *
- * Entry point for the test cases of the testing framework
+ * Entry point for the src cases of the testing framework
  *
- * SPDX-FileCopyrightText: 2008-2022 HPDCS Group <rootsim@googlegroups.com>
+ * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
 #include <test.h>
-#include <framework/self-tests/stubs.h>
-#include <framework/rng.h>
-#include <framework/thread.h>
+#include "stubs.h"
+#include "rng.h"
+#include "thread.h"
 
 #include <math.h>
 #include <stdatomic.h>
@@ -95,24 +95,24 @@ static int test_sleep(_unused void *_)
 
 int main(void)
 {
-	test("Test passing simple test", test_want_arg_null, NULL);
-	test("Test passing assert test", test_assert_arg_null, NULL);
-	test("Test passing fail test", test_fail_on_not_null, NULL);
+	test("Test passing simple src", test_want_arg_null, NULL);
+	test("Test passing assert src", test_assert_arg_null, NULL);
+	test("Test passing fail src", test_fail_on_not_null, NULL);
 
-	test_xf("Test failing simple test", test_want_arg_null, (void *)1);
-	test_xf("Test failing assert test", test_assert_arg_null, (void *)1);
-	test_xf("Test failing fail test", test_fail_on_not_null, (void *)1);
+	test_xf("Test failing simple src", test_want_arg_null, (void *)1);
+	test_xf("Test failing assert src", test_assert_arg_null, (void *)1);
+	test_xf("Test failing fail src", test_fail_on_not_null, (void *)1);
 
-	test_parallel("Test pseudo multithread passing simple test", test_want_arg_null, NULL, 1);
-	test_parallel("Test pseudo multithread passing assert test", test_assert_arg_null, NULL, 1);
-	test_parallel("Test pseudo multithread passing fail test", test_fail_on_not_null, NULL, 1);
+	test_parallel("Test pseudo multithread passing simple src", test_want_arg_null, NULL, 1);
+	test_parallel("Test pseudo multithread passing assert src", test_assert_arg_null, NULL, 1);
+	test_parallel("Test pseudo multithread passing fail src", test_fail_on_not_null, NULL, 1);
 
-	test_parallel("Test multithread passing simple test", test_want_arg_null, NULL, 0);
-	test_parallel("Test multithread passing assert test", test_assert_arg_null, NULL, 0);
-	test_parallel("Test multithread passing fail test", test_fail_on_not_null, NULL, 0);
+	test_parallel("Test multithread passing simple src", test_want_arg_null, NULL, 0);
+	test_parallel("Test multithread passing assert src", test_assert_arg_null, NULL, 0);
+	test_parallel("Test multithread passing fail src", test_fail_on_not_null, NULL, 0);
 
 	test_parallel("Test random number generator", test_rng, NULL, 12);
-	test_xf("Test random number generator fail test", test_fail_rng, NULL);
+	test_xf("Test random number generator fail src", test_fail_rng, NULL);
 
 	test_parallel("Test pseudo multithread thread id", test_single_thread_id, NULL, 1);
 	test_parallel("Test multithread thread id", test_multi_thread_id, NULL, THREAD_COUNT_ID_TEST);

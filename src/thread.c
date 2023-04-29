@@ -1,15 +1,15 @@
 /**
- * @file test/framework/thread.c
+ * @file src/thread.c
  *
  * @brief Test thread management facilities
  *
  * This module provides generic facilities for thread and core management. In particular, helper functions to startup
  * worker threads are exposed.
  *
- * SPDX-FileCopyrightText: 2008-2022 HPDCS Group <rootsim@googlegroups.com>
+ * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
-#include <framework/thread.h>
+#include "thread.h"
 
 #if defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__))
 

@@ -1,14 +1,14 @@
 /**
- * @file test/framework/rng.c
+ * @file src/rng.c
  *
  * @brief Pseudo random number generator for tests
  *
  * An acceptable-quality pseudo random number generator to be used in tests
  *
- * SPDX-FileCopyrightText: 2008-2022 HPDCS Group <rootsim@googlegroups.com>
+ * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
-#include <framework/rng.h>
+#include "rng.h"
 
 #include <assert.h>
 #include <math.h>
@@ -82,11 +82,11 @@ uint64_t rng_random_range(test_rng_state *rng_state, uint64_t n)
 }
 
 /**
- * @brief Kolmogorov-Smirnov test
+ * @brief Kolmogorov-Smirnov src
  * @param N the number of samples to use
  * @param nBins the number of bins to use
  * @param sample the function to use to generate the samples in [0, 1]
- * @return 0 if the test is passed, 1 otherwise
+ * @return 0 if the src is passed, 1 otherwise
  */
 int rng_ks_test(uint32_t n_samples, double (*sample)(void))
 {
