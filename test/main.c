@@ -10,8 +10,6 @@
  */
 #include <test.h>
 #include "stubs.h"
-#include "rng.h"
-#include "thread.h"
 
 #include <math.h>
 #include <stdatomic.h>

@@ -6,11 +6,6 @@
  * SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
  * SPDX-License-Identifier: GPL-3.0-only
  */
-#include "test.h"
-
-#include "thread.h"
-#include "rng.h"
-
 #include <setjmp.h>
 #include <stdatomic.h>
 #include <stdbool.h>
@@ -19,6 +14,8 @@
 #ifndef _WIN32
 #include <unistd.h>
 #endif
+
+#include "test.h"
 
 struct test_ctx {
 	jmp_buf jmp_buf;
