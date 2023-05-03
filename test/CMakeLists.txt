@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2008-2023 HPDCS Group <rootsim@googlegroups.com>
 # SPDX-License-Identifier: GPL-3.0-only
+
 function(test_program name)
     add_executable(test_${name} ${ARGN})
     target_include_directories(test_${name} PRIVATE ../src)
@@ -11,6 +12,11 @@ endfunction()
 function(test_program_xf name)
     test_program(${name} ${ARGN})
     set_tests_properties(test_${name} PROPERTIES WILL_FAIL TRUE)
+endfunction()
+
+function(test_program_mpi name)
+    test_program(${name} ${ARGN})
+    set_property(TARGET test_${name} PROPERTY CROSSCOMPILING_EMULATOR "${MPIEXEC_EXECUTABLE};${MPIEXEC_NUMPROC_FLAG};2")
 endfunction()
 
 # Test framework tests
