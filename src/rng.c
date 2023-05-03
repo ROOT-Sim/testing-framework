@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "test.h"
+#include <test.h>
 
 #define rng_clz(x)                                                                                                     \
 	__extension__({                                                                                                \

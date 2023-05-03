@@ -15,7 +15,7 @@
 #include <unistd.h>
 #endif
 
-#include "test.h"
+#include <test.h>
 
 struct test_ctx {
 	jmp_buf jmp_buf;
