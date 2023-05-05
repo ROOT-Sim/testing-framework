@@ -35,7 +35,6 @@ extern void rng_init(test_rng_state *rng_state, test_rng_state initseq);
 extern uint64_t rng_random_u(test_rng_state *rng_state);
 extern double rng_random(test_rng_state *rng_state);
 extern uint64_t rng_random_range(test_rng_state *rng_state, uint64_t n);
-extern int rng_ks_test(uint32_t n_samples, double (*sample)(void));
 
 
 #if defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__))
