@@ -30,6 +30,30 @@ endif ()
 
 add_subdirectory(src)
 
-# Run the tests
-enable_testing()
-add_subdirectory(test)
+function(test_program name)
+    add_executable(test_${name} ${ARGN})
+    target_include_directories(test_${name} PRIVATE ../src)
+    target_link_libraries(test_${name} rstest)
+    add_test(NAME test_${name} COMMAND test_${name})
+    set_tests_properties(test_${name} PROPERTIES TIMEOUT 60)
+endfunction()
+
+function(test_program_xf name)
+    test_program(${name} ${ARGN})
+    set_tests_properties(test_${name} PROPERTIES WILL_FAIL TRUE)
+endfunction()
+
+function(test_program_mpi name)
+    test_program(${name} ${ARGN})
+    set_property(TARGET test_${name} PROPERTY CROSSCOMPILING_EMULATOR "${MPIEXEC_EXECUTABLE};${MPIEXEC_NUMPROC_FLAG};2")
+endfunction()
+
+function(test_program_link_libraries name)
+    target_link_libraries(test_${name} ${ARGN})
+endfunction()
+
+if (NOT IMPORT_AS_LIB)
+    # Run the tests
+    enable_testing()
+    add_subdirectory(test)
+endif ()
