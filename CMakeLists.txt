@@ -8,9 +8,9 @@ set(PROJECT_VERSION 1.0.0)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-if (MSVC)
+if(MSVC AND NOT CMAKE_C_COMPILER_ID STREQUAL "Clang")
     message(FATAL_ERROR "You are using the MSVC compiler, which does not properly implement C11. Please consider switching to clang.")
-endif ()
+endif()
 
 find_package(Threads REQUIRED)
 add_compile_options(-Wall -Wextra -pedantic)
